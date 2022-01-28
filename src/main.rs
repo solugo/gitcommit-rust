@@ -12,7 +12,7 @@ fn main() {
 }
 
 fn calculate_version(path: &str) -> Result<String, Box<dyn Error>> {
-    let regex = Regex::new(r"(?P<major>\d+)(?:[.](?P<minor>\d+[.])(?:[.](?P<patch>\d+[.]))?)?")?;
+    let regex = Regex::new(r"v(?P<major>\d+)(?:[.](?P<minor>\d+[.])(?:[.](?P<patch>\d+[.]))?)?")?;
     let repo = Repository::open(path)?;
 
     let mut version = Version {
